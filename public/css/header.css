@@ -1,0 +1,67 @@
+:root {
+    --blanquito: #f1f0ec;
+    --amarrillito: #FFC107;
+    --azulito: #383940;
+    --negrito: #2E2D2D;
+    --texto: Comfortaa;
+    --titulos: Poppins;
+}
+
+.topbar {
+    background: var(--negrito);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    border-bottom: 3px solid var(--amarrillito);
+    align-items: center;
+}
+
+.logo {
+    width: 4.5vw;
+    height: auto;
+    margin-right: 40vw;
+}
+
+.usuari img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--amarrillito);
+}
+
+.buscar {
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    width: 30vw;
+    height: 3.29vw;
+}
+
+.buscar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.buscar input {
+    background-color: var(--azulito);
+    padding: 8px 35px 8px 15px;
+    border-radius: 15px;
+    border: none;
+    font-size: 24px;
+    outline: none;
+}
+
+.buscar i {
+    width: 37px;
+    position: absolute;
+    right: 10px;
+    color: var(--amarrillito);
+    font-size: 30px;
+    pointer-events: none;
+}
+
+.noti i {
+     font-size: 24px;
+}

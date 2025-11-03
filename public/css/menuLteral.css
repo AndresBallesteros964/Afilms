@@ -1,0 +1,114 @@
+:root {
+  --blanquito: #f1f0ec;
+  --amarrillito: #ffc107;
+  --azulito: #383940;
+  --negrito: #2e2d2d;
+  --texto: Comfortaa, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--texto);
+}
+
+body {
+  background: var(--negrito);
+  color: var(--blanquito);
+}
+
+/* ---- MENÚ LATERAL ---- */
+.menult {
+  position: fixed;
+  width: 85px;
+  height: calc(100vh - 60px);
+  background: var(--azulito);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  list-style: none;
+}
+
+.menult li {
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+
+.menult li a {
+  width: 100%;
+  height: 70px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--blanquito);
+  cursor: pointer;
+  position: relative;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+
+.menult li i {
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.menult li span {
+  display: none;
+  font-size: 13px;
+  margin-top: 5px;
+  transition: opacity 0.3s ease;
+}
+
+/* ---- Hover ---- */
+.menult li:hover {
+  background: #42444c;
+}
+
+.menult li:hover a {
+  color: var(--amarrillito);
+}
+
+.menult li:hover span {
+  display: inline;
+  opacity: 1;
+}
+
+/* ---- Activo ---- */
+.menult li.active {
+  background: #2b2c31; 
+}
+
+.menult li.active a {
+  color: var(--amarrillito);
+}
+
+.menult li.active span {
+  display: inline;
+}
+
+/* Línea amarilla solo al activo */
+.menult li.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--amarrillito);
+  border-radius: 2px 0 0 2px;
+  transition: height 0.3s ease;
+}
+
+.menult li a:focus,
+.menult li a:active {
+  outline: none;
+  background: none;
+}
