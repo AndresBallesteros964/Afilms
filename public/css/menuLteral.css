@@ -1,3 +1,4 @@
+
 :root {
   --blanquito: #f1f0ec;
   --amarrillito: #ffc107;
@@ -21,8 +22,11 @@ body {
 /* ---- MENÚ LATERAL ---- */
 .menult {
   position: fixed;
+  top: 74px; 
+  left: 0;
   width: 85px;
   height: calc(100vh - 60px);
+  height: calc(100vh - 74px); 
   background: var(--azulito);
   display: flex;
   justify-content: space-between;
@@ -30,7 +34,9 @@ body {
   align-items: center;
   padding: 20px 0;
   list-style: none;
+  z-index: 999; 
 }
+
 
 .menult li {
   width: 100%;

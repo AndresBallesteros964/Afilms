@@ -3,18 +3,64 @@
 
 <head>
   <%- include('../partials/head') %>
-  <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
   <header>
-    <%- include('../partials/header') %>
-    <%- include('../partials/menuLteral') %>
-  </header>
-  <main>
-  
-  </main>
+    <!-- Barra superior -->
+    <header class="topbar">
+      <%- include('../partials/header') %>
+    </header>
 
+    <!-- Menú lateral -->
+    <nav class="sidebar">
+      <%- include('../partials/menuLteral') %>
+    </nav>
+    <!-- Contenido principal -->
+    <main>
+
+      <!-- Carrusel principal -->
+      <section class="main-carousel">
+        <div class="carousel-wrapper">
+          <div class="carousel-item active">
+            <img src="/images/psot.jpg" alt="One Punch Man">
+            <div class="carousel-info">
+              <div class="carousel-buttons">
+                <button class="btn-details">Detalles</button>
+                <button class="btn-watch">Ver ahora</button>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn prev">&#10094;</button>
+          <button class="carousel-btn next">&#10095;</button>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+      </section>
+
+      <!-- Fila de tarjetas -->
+      <section class="cards-section">
+        <h3>Recomendados</h3>
+        <div class="cards-container">
+          <div class="card"><img src="/images/images.jpg" alt="Kimetsu no Yaiba"></div>
+          <div class="card"><img src="/images/black phone.jpg" alt="Tokyo Revengers"></div>
+          <div class="card"><img src="/images/100.jpg" alt="Blue Lock"></div>
+          <div class="card"><img src="/images/coju.jpg" alt="Jujutsu Kaisen"></div>
+          <div class="card"><img src="/images/stan.jpg" alt="Attack on Titan"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/scripts/carru.js"></script>
 </body>
+
 
 </html>
