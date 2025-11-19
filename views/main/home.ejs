@@ -3,91 +3,110 @@
 
 <head>
   <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
   <header>
-    <!-- Barra superior -->
     <header class="topbar">
       <%- include('../partials/header') %>
     </header>
 
-    <!-- Menú lateral -->
     <nav class="sidebar">
       <%- include('../partials/menuLteral') %>
     </nav>
-    <!-- Contenido principal -->
+
     <main>
 
       <!-- Carrusel principal -->
       <section class="main-carousel">
         <div class="carousel-wrapper">
-          <div class="carousel-item active">
-            <img src="/images/psot.jpg" alt="One Punch Man">
-            <div class="carousel-info">
-              <div class="carousel-buttons">
-                <button class="btn-details">Detalles</button>
-                <button class="btn-watch">Ver ahora</button>
+
+          <% trending.slice(0, 4).forEach((item, index)=> { %>
+            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+              <img src="https://image.tmdb.org/t/p/original<%= item.backdrop_path || item.poster_path %>"
+                alt="<%= item.title || item.name %>">
+              <div class="carousel-info">
+                <div class="carousel-buttons">
+                  <button class="btn-details">Detalles</button>
+                  <button class="btn-watch">Ver ahora</button>
+                </div>
               </div>
             </div>
-          </div>
+          <% }); %>
+
           <button class="carousel-btn prev">&#10094;</button>
           <button class="carousel-btn next">&#10095;</button>
         </div>
 
-        <!-- Indicadores -->
         <div class="carousel-indicators">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+          <% trending.slice(0, 4).forEach((item, index)=> { %>
+            <span class="dot <%= index === 0 ? 'active' : '' %>"></span>
+          <% }); %>
         </div>
-
       </section>
 
-      <!-- Fila de tarjetas -->
+
+      <!-- ===== RECOMENDADOS ===== -->
       <section class="cards-section">
         <h3>Recomendados</h3>
-        <div class="cards-container">
-          <div class="card"><img src="/images/images.jpg" alt="jujutsu kaisen"></div>
-          <div class="card"><img src="/images/black phone.jpg" alt="telefono negro 2"></div>
-          <div class="card"><img src="/images/100.jpg" alt="the 100"></div>
-          <div class="card"><img src="/images/coju.jpg" alt="El conjuro"></div>
-          <div class="card"><img src="/images/stan.jpg" alt="Stan de los besos"></div>
-          <div class="card"><img src="/images/stan.jpg" alt="Stan de los besos"></div>
-        </div>  
-      </section>
 
-        <section class="cards-section">
-        <h3>Peliculas</h3>
-        <div class="cards-container">
-          <div class="card"><img src="/images/images.jpg" alt="jujutsu kaisen"></div>
-          <div class="card"><img src="/images/black phone.jpg" alt="telefono negro 2"></div>
-          <div class="card"><img src="/images/100.jpg" alt="the 100"></div>
-          <div class="card"><img src="/images/coju.jpg" alt="El conjuro"></div>
-          <div class="card"><img src="/images/stan.jpg" alt="Stan de los besos"></div>
-          <div class="card"><img src="/images/stan.jpg" alt="Stan de los besos"></div>
+        <div class="scroll-controls">
+          <button class="scroll-btn left" data-target="recomendados">&#10094;</button>
+          <button class="scroll-btn right" data-target="recomendados">&#10095;</button>
+        </div>
+
+        <div class="cards-container scrollable" id="recomendados">
+          <% recomendados.forEach(item=> { %>
+            <div class="card">
+              <img src="https://image.tmdb.org/t/p/w500<%= item.poster_path %>" alt="<%= item.title || item.name %>">
+            </div>
+          <% }); %>
         </div>
       </section>
 
-        <section class="cards-section">
+
+      <!-- ===== PELÍCULAS ===== -->
+      <section class="cards-section">
+        <h3>Películas</h3>
+
+        <div class="scroll-controls">
+          <button class="scroll-btn left" data-target="peliculas">&#10094;</button>
+          <button class="scroll-btn right" data-target="peliculas">&#10095;</button>
+        </div>
+
+        <div class="cards-container scrollable" id="peliculas">
+          <% peliculas.forEach(item=> { %>
+            <div class="card">
+              <img src="https://image.tmdb.org/t/p/w500<%= item.poster_path %>" alt="<%= item.title %>">
+            </div>
+          <% }); %>
+        </div>
+      </section>
+
+
+      <!-- ===== SERIES ===== -->
+      <section class="cards-section">
         <h3>Series</h3>
-        <div class="cards-container">
-          <div class="card"><img src="/images/images.jpg" alt="jujutsu kaisen"></div>
-          <div class="card"><img src="/images/black phone.jpg" alt="telefono negro 2"></div>
-          <div class="card"><img src="/images/100.jpg" alt="the 100"></div>
-          <div class="card"><img src="/images/coju.jpg" alt="El conjuro"></div>
-          <div class="card"><img src="/images/stan.jpg" alt="Stan de los besos"></div>
-          <div class="card"><img src="/images/stan.jpg" alt="Stan de los besos"></div>
+
+        <div class="scroll-controls">
+          <button class="scroll-btn left" data-target="series">&#10094;</button>
+          <button class="scroll-btn right" data-target="series">&#10095;</button>
         </div>
 
-        
+        <div class="cards-container scrollable" id="series">
+          <% series.forEach(item=> { %>
+            <div class="card">
+              <img src="https://image.tmdb.org/t/p/w500<%= item.poster_path %>" alt="<%= item.name %>">
+            </div>
+          <% }); %>
+        </div>
       </section>
+
     </main>
 
     <script src="/scripts/carru.js"></script>
+    <script src="/scripts/scrollSections.js"></script>
+
 </body>
-
-
 </html>

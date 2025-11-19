@@ -34,24 +34,28 @@
           <div class="filtro-item">
             <label>Ordenar por</label>
             <div class="select-wrapper">
-              <select>
-                <option>Por fecha</option>
-                <option>Por nombre</option>
+              <select id="ordenar">
+                <option value="release_date.desc">Por fecha</option>
+                <option value="original_title.asc">Por nombre</option>
+                <option value="popularity.desc">Popularidad</option>
+                <option value="vote_average.desc">Rating</option>
               </select>
               <i class="fa-solid fa-chevron-down arrow"></i>
             </div>
           </div>
 
-
           <!-- GÉNERO -->
           <div class="filtro-item">
             <label>Género</label>
             <div class="select-wrapper">
-              <select>
-                <option>Sin género</option>
-                <option>Acción</option>
-                <option>Comedia</option>
-                <option>Drama</option>
+              <select id="genero">
+                <option value="">Sin género</option>
+                <option value="28">Acción</option>
+                <option value="35">Comedia</option>
+                <option value="18">Drama</option>
+                <option value="10749">Romance</option>
+                <option value="16">Animación</option>
+                <option value="27">Terror</option>
               </select>
               <i class="fa-solid fa-chevron-down arrow"></i>
             </div>
@@ -61,11 +65,11 @@
           <div class="filtro-item">
             <label>Letra</label>
             <div class="select-wrapper">
-              <select>
-                <option>Sin letra</option>
-                <option>A–F</option>
-                <option>G–M</option>
-                <option>N–Z</option>
+              <select id="letra">
+                <option value="">Sin letra</option>
+                <option value="AF">A–F</option>
+                <option value="GM">G–M</option>
+                <option value="NZ">N–Z</option>
               </select>
               <i class="fa-solid fa-chevron-down arrow"></i>
             </div>
@@ -75,10 +79,10 @@
           <div class="filtro-item">
             <label>Categoría</label>
             <div class="select-wrapper">
-              <select>
-                <option>Sin categoría</option>
-                <option>Películas</option>
-                <option>Series</option>
+              <select id="categoria">
+                <option value="">Sin categoría</option>
+                <option value="movie">Películas</option>
+                <option value="tv">Series</option>
               </select>
               <i class="fa-solid fa-chevron-down arrow"></i>
             </div>
@@ -88,11 +92,12 @@
           <div class="filtro-item">
             <label>Año</label>
             <div class="select-wrapper">
-              <select>
-                <option>Sin año</option>
-                <option>2024</option>
-                <option>2023</option>
-                <option>2022</option>
+              <select id="anio">
+                <option value="">Sin año</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
               </select>
               <i class="fa-solid fa-chevron-down arrow"></i>
             </div>
@@ -102,22 +107,22 @@
           <div class="filtro-item">
             <label>Orden</label>
             <div class="select-wrapper">
-              <select>
-                <option>Ascendente</option>
-                <option>Descendente</option>
+              <select id="orden">
+                <option value="asc">Ascendente</option>
+                <option value="desc">Descendente</option>
               </select>
               <i class="fa-solid fa-chevron-down arrow"></i>
             </div>
           </div>
 
-          <!-- ESTADO -->
+          <!-- ESTADO (solo para SERIES en TMDB) -->
           <div class="filtro-item">
             <label>Estado</label>
             <div class="select-wrapper">
-              <select>
-                <option>Ninguno</option>
-                <option>Completado</option>
-                <option>En emisión</option>
+              <select id="estado">
+                <option value="">Ninguno</option>
+                <option value="Returning Series">En emisión</option>
+                <option value="Ended">Completado</option>
               </select>
               <i class="fa-solid fa-chevron-down arrow"></i>
             </div>
@@ -125,36 +130,27 @@
 
           <!-- BOTONES -->
           <button class="btn-filtrar">
-            <i class="fa-solid fa-sliders"></i>
-            Filtrar</button>
+            <i class="fa-solid fa-sliders"></i> Filtrar
+          </button>
+
           <button class="btn-random">
-            <i class="fa-solid fa-shuffle"></i>
-            Aleatorio</button>
+            <i class="fa-solid fa-shuffle"></i> Aleatorio
+          </button>
 
         </div>
+
       </div>
 
       <div class="grid-posters">
 
-        <div class="poster-card">
-          <img src="/images/images.jpg" alt="jujutsu kaisen">
-          <p class="poster-title">Drácula</p>
-        </div>
-
-        <div class="poster-card">
-          <img src="/images/images.jpg" alt="jujutsu kaisen">
-          <p class="poster-title">Jujutsu Kaisen</p>
-        </div>
-
-        <div class="poster-card">
-          <img src="/images/images.jpg" alt="jujutsu kaisen">
-          <p class="poster-title">Son como niños</p>
-        </div>
-
-        <div class="poster-card">
-          <img src="/images/images.jpg" alt="jujutsu kaisen">
-          <p class="poster-title">Demon Slayer</p>
-        </div>
+        <% lista.forEach(item=> { %>
+          <div class="poster-card">
+            <img src="https://image.tmdb.org/t/p/w500<%= item.poster_path %>" alt="<%= item.title || item.name %>">
+            <p class="poster-title">
+              <%= item.title || item.name %>
+            </p>
+          </div>
+          <% }) %>
 
       </div>
 

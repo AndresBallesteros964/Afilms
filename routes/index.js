@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('main/home', { page: 'inicio' });
-});
+//  controladores
+const { homeController } = require('../controller/homeController');
+const { directorioController, apiDirectorio } = require("../controller/directorioController");
 
-router.get('/directorio', (req, res) => {
-  res.render('main/directorio', { page: 'directorio' });
-});
+// rutas
+router.get('/', homeController);
+
+router.get("/directorio", directorioController);
+router.get("/api/directorio", apiDirectorio);
+
 
 router.get('/top', (req, res) => {
   res.render('main/top', { page: 'top' });
 });
-
 
 router.get('/comunidad', (req, res) => {
   res.render('main/comunidad', { page: 'comunidad' });
@@ -25,6 +27,5 @@ router.get('/historial', (req, res) => {
 router.get('/User', (req, res) => {
   res.render('main/User', { page: 'User' });
 });
-
 
 module.exports = router;

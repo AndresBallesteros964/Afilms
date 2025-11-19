@@ -197,3 +197,36 @@ main {
   height: 100%;
   object-fit: cover;
 }
+
+.scroll-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.scroll-btn {
+  background: var(--azulito);
+  color: var(--amarrillito);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.scroll-btn:hover {
+  background: var(--amarrillito);
+  color: var(--negrito);
+}
+
+.scrollable {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 5px;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
