@@ -1,182 +1,222 @@
+:root {
+  --blanquito: #f1f0ec;
+  --amarrillito: #ffc107;
+  --azulito: #383940;
+  --negrito: #2e2d2d;
+  --texto: Comfortaa, sans-serif;
+}
+
+/* ========= RESETEO ========= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--texto);
 }
 
 body {
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  height: 100vh;
+  background: var(--negrito);
+  color: var(--blanquito);
+  overflow-x: hidden;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 90px;
-  background: #1a1a1a;
+/* ========= MAIN ========= */
+main {
+  margin-top: 80px;
+  margin-left: 85px;
+  padding: 20px;
+  min-height: calc(100vh - 80px);
+}
+
+/* CONTENEDOR GENERAL */
+.perfil-container {
+  padding: 40px;
+  color: var(--blanquito);
+  background: #2b2b2b;
+  width: 100%;
+}
+
+/* CABECERA DEL PERFIL */
+.perfil-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding-top: 20px;
-}
-
-.sidebar .logo {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sidebar nav a {
-  text-decoration: none;
-  color: #bbb;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.sidebar nav a.active,
-.sidebar nav a:hover {
-  color: #ffb400;
-}
-
-/* Main profile */
-.profile {
-  flex: 1;
-  background: #222;
-  border-radius: 10px;
-  margin: 20px;
-  padding: 20px 40px;
-  position: relative;
-}
-
-/* Header */
-header {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-bottom: 3px solid #ffb400;
-  padding-bottom: 10px;
 }
 
-header .logo-text {
-  font-size: 1.5rem;
+/* FOTO DE PERFIL */
+.perfil-foto img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 6px solid var(--amarrillito);
+}
+
+/* INFORMACIÓN */
+.perfil-info {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.perfil-info h2 {
+  font-size: 32px;
+}
+
+.perfil-stats {
+  margin-top: 10px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* BOTÓN EDITAR */
+.btn-editar {
+  background: #f1b500;
+  color: black;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
   font-weight: bold;
 }
 
-header .icons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+/* ========================= */
+/*        TABS (PESTAÑAS)    */
+/* ========================= */
 
-header img {
-  width: 25px;
-  cursor: pointer;
-}
-
-header .avatar {
-  width: 35px;
-  border-radius: 50%;
-}
-
-/* User Info */
-.user-info {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.user-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #ffb400;
-}
-
-.user-info h2 {
-  margin-top: 10px;
-  font-size: 1.3rem;
-}
-
-.stats {
-  margin-top: 5px;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-.edit-btn {
-  margin-top: 10px;
-  background: #ffb400;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-/* Tabs */
-.tabs {
+.perfil-tabs {
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin: 30px 0 10px;
+  gap: 11vw;
+  margin-top: 20px;
+  padding-bottom: 10px;
 }
 
-.tabs a {
-  text-decoration: none;
-  color: #aaa;
-  font-weight: 500;
-}
-
-.tabs a.active {
-  color: #ffb400;
-  border-bottom: 2px solid #ffb400;
-}
-
-/* Episodes */
-.episodes h3 {
-  margin-bottom: 15px;
-}
-
-.cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: #111;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 160px;
-  position: relative;
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.card .tag {
+/* LÍNEA GRIS COMPLETA */
+.perfil-tabs::after {
+  content: "";
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ffb400;
-  color: #000;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 10px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #3a3a3a;
+  z-index: 1;
 }
 
-.card p {
-  font-size: 0.9rem;
-  margin: 10px 0;
+.tab {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #cfcfcf;
+  cursor: pointer;
+  padding: 5px 0;
+  position: relative;
+}
+
+.tab.active {
+  color: #fff;
+}
+
+/* LÍNEA AMARILLA SOLO EN TAB ACTIVA */
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--amarrillito);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Mostrar / ocultar secciones */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* TITULOS */
+.titulo-seccion {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* ========================= */
+/*      TARJETAS (GRID)      */
+/* ========================= */
+
+.episodios-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 25px;
+}
+
+.episodio-card {
+  position: relative;
+}
+
+.episodio-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.episodio-card p {
+  margin-top: 8px;
+}
+
+.tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--amarrillito);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.tag.pelicula {
+  background: #ff79c6;
+}
+
+.tag.serie {
+  background: #1e90ff;
+}
+
+/* ========================= */
+/*         LISTAS            */
+/* ========================= */
+
+.listas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.lista-card {
+  background: var(--azulito);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lista-card:hover {
+  background: #4a4b52;
+  transform: translateY(-3px);
+}
+
+.lista-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
 }

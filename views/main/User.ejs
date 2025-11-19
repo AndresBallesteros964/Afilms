@@ -3,22 +3,146 @@
 
 <head>
   <%- include('../partials/head') %>
+    <link rel="stylesheet" href="css/user.css">
 </head>
 
 <body>
-  <header>
-    <!-- Barra superior -->
-    <header class="topbar">
-      <%- include('../partials/header') %>
-    </header>
+  <!-- Barra superior -->
+  <header class="topbar">
+    <%- include('../partials/header') %>
+  </header>
 
-    <!-- Menú lateral -->
-    <nav class="sidebar">
-      <%- include('../partials/menuLteral') %>
-    </nav>
-    <main>
-    </main>
+  <!-- Menú lateral -->
+  <nav class="sidebar">
+    <%- include('../partials/menuLteral') %>
+  </nav>
 
+  <main>
+    <div class="perfil-container">
+
+      <!-- ENCABEZADO DEL PERFIL -->
+      <div class="perfil-header">
+        <div class="perfil-foto">
+          <img src="images/fotoPerfil.jpg" alt="Foto de perfil">
+        </div>
+
+        <div class="perfil-info">
+          <h2>Andrx</h2>
+          <div class="perfil-stats">
+            <span>80 Likes</span>
+            <span>•</span>
+            <span>110 Comentarios</span>
+          </div>
+        </div>
+
+        <button class="btn-editar">Editar perfil</button>
+      </div>
+
+      <!-- PESTAÑAS -->
+      <div class="perfil-tabs">
+        <button class="tab active" data-tab="recientes">Recientes</button>
+        <button class="tab" data-tab="guardado">Guardado</button>
+        <button class="tab" data-tab="listas">Listas</button>
+      </div>
+
+      <!-- CONTENIDO DE PESTAÑAS -->
+
+      <!-- 🔥 TAB: RECIENTES -->
+      <div id="recientes" class="tab-content active">
+        <h3 class="titulo-seccion">Episodios vistos</h3>
+
+        <div class="episodios-grid">
+
+          <div class="episodio-card">
+            <span class="tag">Capítulo 6</span>
+            <img src="/images/images.jpg" alt="">
+            <p>Demon Slayer</p>
+          </div>
+
+          <div class="episodio-card">
+            <span class="tag">Capítulo 22</span>
+            <img src="/images/images.jpg" alt="">
+            <p>Naruto Shippuden</p>
+          </div>
+
+          <div class="episodio-card">
+            <span class="tag pelicula">Película</span>
+            <img src="/images/images.jpg" alt="">
+            <p>El stand de los besos</p>
+          </div>
+
+          <div class="episodio-card">
+            <span class="tag serie">Serie</span>
+            <img src="/images/images.jpg" alt="">
+            <p>The 100: temporada 1</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 📌 TAB: GUARDADO -->
+      <div id="guardado" class="tab-content">
+        <h3 class="titulo-seccion">Guardado</h3>
+
+        <div class="episodios-grid">
+
+          <div class="episodio-card">
+            <span class="tag">Capítulo 12</span>
+            <img src="/images/images.jpg" alt="">
+            <p>Jujutsu Kaisen</p>
+          </div>
+
+          <div class="episodio-card">
+            <span class="tag">Capítulo 8</span>
+            <img src="/images/images.jpg" alt="">
+            <p>Attack on Titan</p>
+          </div>
+
+          <div class="episodio-card">
+            <span class="tag pelicula">Película</span>
+            <img src="/images/images.jpg" alt="">
+            <p>Your Name</p>
+          </div>
+
+          <div class="episodio-card">
+            <span class="tag serie">Serie</span>
+            <img src="/images/images.jpg" alt="">
+            <p>Stranger Things</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- 📌 TAB: LISTAS -->
+      <div id="listas" class="tab-content">
+        <h3 class="titulo-seccion">Tus listas</h3>
+
+        <div class="listas-grid">
+
+          <div class="lista-card">
+            <div class="lista-icon">📺</div>
+            <p>Series que quiero ver</p>
+          </div>
+
+          <div class="lista-card">
+            <div class="lista-icon">🎬</div>
+            <p>Películas favoritas</p>
+          </div>
+
+          <div class="lista-card">
+            <div class="lista-icon">🔥</div>
+            <p>Animes recomendados</p>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+  <script src="/scripts/user.js"></script>
 </body>
 
 </html>

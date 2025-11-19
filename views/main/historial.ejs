@@ -6,18 +6,97 @@
 </head>
 
 <body>
-  <header>
-    <!-- Barra superior -->
-    <header class="topbar">
-      <%- include('../partials/header') %>
-    </header>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+  <link rel="stylesheet" href="/css/historial.css">
+</head>
 
-    <!-- Menú lateral -->
-    <nav class="sidebar">
-      <%- include('../partials/menuLteral') %>
-    </nav>
-    <main>
-    </main>
+<body>
+  <!-- Barra superior -->
+  <header class="topbar">
+    <%- include('../partials/header') %>
+  </header>
+
+  <!-- Menú lateral -->
+  <nav class="sidebar">
+    <%- include('../partials/menuLteral') %>
+  </nav>
+
+  <main>
+    <div class="historial-container">
+
+      <!-- TÍTULO -->
+      <div class="titulo-historial">
+        <span class="barra-amarilla"></span>
+        Historial 
+      </div>
+      <div class="linea-gris"></div>
+
+      <!-- FILTROS -->
+      <div class="filtros">
+        
+        <div class="filtro-item">
+          <label>Ordenar</label>
+          <select>
+            <option>Por fecha</option>
+            <option>Por nombre</option>
+          </select>
+        </div>
+
+        <div class="filtro-item">
+          <label>Orden</label>
+          <select>
+            <option>Ascendente</option>
+            <option>Descendente</option>
+          </select>
+        </div>
+
+        <div class="filtro-item">
+          <label>Filtrar</label>
+          <input type="text" class="input-buscar" placeholder="Buscar...">
+        </div>
+
+        <button class="btn-borrar">Vaciar historial</button>
+
+      </div>
+
+      <!-- TARJETAS DEL HISTORIAL -->
+      <div class="historial-grid">
+
+        <div class="historial-card">
+          <button class="btn-x">✕</button>
+          <span class="episodio-tag">Episodio 3</span>
+          <img src="/images/images.jpg" alt="">
+          <div class="title">Isekai Mokushiroku</div>
+          <div class="fecha">2/10/2025, 12:38:33</div>
+        </div>
+
+        <div class="historial-card">
+          <button class="btn-x">✕</button>
+          <span class="episodio-tag">Episodio 12</span>
+          <img src="/images/images.jpg" alt="">
+          <div class="title">Dr. Stone</div>
+          <div class="fecha">2/10/2025, 4:38:44</div>
+        </div>
+
+        <div class="historial-card">
+          <button class="btn-x">✕</button>
+          <span class="episodio-tag">Episodio 11</span>
+          <img src="/images/images.jpg" alt="">
+          <div class="title">Mizu Zokusei</div>
+          <div class="fecha">22/9/2025, 22:09:25</div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
+
 
 </body>
 

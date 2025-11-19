@@ -3,6 +3,7 @@
 
 <head>
   <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/directorio.css">
 </head>
 
 <body>
@@ -16,9 +17,153 @@
     <nav class="sidebar">
       <%- include('../partials/menuLteral') %>
     </nav>
+
     <main>
+
+      <div class="directorio-container">
+
+        <div class="section-header">
+          <div class="yellow-bar"></div>
+          <h2>Lista completa</h2>
+        </div>
+        <div class="section-divider"></div>
+
+        <div class="filtros">
+
+          <!-- ORDENAR POR -->
+          <div class="filtro-item">
+            <label>Ordenar por</label>
+            <div class="select-wrapper">
+              <select>
+                <option>Por fecha</option>
+                <option>Por nombre</option>
+              </select>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+          </div>
+
+
+          <!-- GÉNERO -->
+          <div class="filtro-item">
+            <label>Género</label>
+            <div class="select-wrapper">
+              <select>
+                <option>Sin género</option>
+                <option>Acción</option>
+                <option>Comedia</option>
+                <option>Drama</option>
+              </select>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+          </div>
+
+          <!-- LETRA -->
+          <div class="filtro-item">
+            <label>Letra</label>
+            <div class="select-wrapper">
+              <select>
+                <option>Sin letra</option>
+                <option>A–F</option>
+                <option>G–M</option>
+                <option>N–Z</option>
+              </select>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+          </div>
+
+          <!-- CATEGORÍA -->
+          <div class="filtro-item">
+            <label>Categoría</label>
+            <div class="select-wrapper">
+              <select>
+                <option>Sin categoría</option>
+                <option>Películas</option>
+                <option>Series</option>
+              </select>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+          </div>
+
+          <!-- AÑO -->
+          <div class="filtro-item">
+            <label>Año</label>
+            <div class="select-wrapper">
+              <select>
+                <option>Sin año</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+              </select>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+          </div>
+
+          <!-- ORDEN -->
+          <div class="filtro-item">
+            <label>Orden</label>
+            <div class="select-wrapper">
+              <select>
+                <option>Ascendente</option>
+                <option>Descendente</option>
+              </select>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+          </div>
+
+          <!-- ESTADO -->
+          <div class="filtro-item">
+            <label>Estado</label>
+            <div class="select-wrapper">
+              <select>
+                <option>Ninguno</option>
+                <option>Completado</option>
+                <option>En emisión</option>
+              </select>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+          </div>
+
+          <!-- BOTONES -->
+          <button class="btn-filtrar">
+            <i class="fa-solid fa-sliders"></i>
+            Filtrar</button>
+          <button class="btn-random">
+            <i class="fa-solid fa-shuffle"></i>
+            Aleatorio</button>
+
+        </div>
+      </div>
+
+      <div class="grid-posters">
+
+        <div class="poster-card">
+          <img src="/images/images.jpg" alt="jujutsu kaisen">
+          <p class="poster-title">Drácula</p>
+        </div>
+
+        <div class="poster-card">
+          <img src="/images/images.jpg" alt="jujutsu kaisen">
+          <p class="poster-title">Jujutsu Kaisen</p>
+        </div>
+
+        <div class="poster-card">
+          <img src="/images/images.jpg" alt="jujutsu kaisen">
+          <p class="poster-title">Son como niños</p>
+        </div>
+
+        <div class="poster-card">
+          <img src="/images/images.jpg" alt="jujutsu kaisen">
+          <p class="poster-title">Demon Slayer</p>
+        </div>
+
+      </div>
+
+      </div>
+
+
     </main>
 
+    <script src="/scripts/direc.js"></script>
 </body>
 
 </html>

@@ -73,7 +73,6 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* ---- Hover ---- */
 .menult li:hover {
   background: #42444c;
 }
@@ -87,7 +86,7 @@ body {
   opacity: 1;
 }
 
-/* ---- Activo ---- */
+
 .menult li.active {
   background: #2b2c31; 
 }
@@ -100,7 +99,6 @@ body {
   display: inline;
 }
 
-/* Línea amarilla solo al activo */
 .menult li.active::after {
   content: "";
   position: absolute;
@@ -117,4 +115,36 @@ body {
 .menult li a:active {
   outline: none;
   background: none;
+}
+
+/* ========= TOPBAR ========= */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: var(--negrito);
+  border-bottom: 3px solid var(--amarrillito);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  z-index: 1000;
+}
+
+/* ========= MENÚ LATERAL ========= */
+.sidebar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 85px;
+  height: calc(100vh - 80px);
+  background: var(--azulito);
+  z-index: 900;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
 }
